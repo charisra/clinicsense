@@ -6,9 +6,9 @@
 
 ### 2) cd into `clinicsense`
 
-### 3) npm install (only once)
+### 3) `npm install` (only once)
 
-### 4) npm start
+### 4) `npm start`
 
 ## About the project
 
