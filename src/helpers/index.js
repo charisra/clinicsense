@@ -4,19 +4,20 @@ export const calculation = (calcArray, currentResult) => {
     return currentResult;
   }
 
-  let calcString = calcArray.join("");
-
   // Split the calcString based on operators and store to an Array & set default result and operator
-  let arrNew = calcString.split(/(\+|-|\*|\/)/g);
+  let arrNew = calcArray.join("").split(/(\+|-|\*|\/)/g);
   let result = 0;
   let operator = "+";
 
   // Calculate result by looping through the array
   for (let i = 0; i < arrNew.length; i++) {
     let item = arrNew[i];
-    let isOperator = /(\+|-|\*|\/)/.test(item); // check if operator
+    let isOperator = /(\+|-|\*|\/)/.test(item);
+    // Check if the item is an operator.
+    // If it is, set the last operator to do the calculation in the next loop cycle
+    // If not, do the math by using the already stored operator (from the previous loop cycle)
     if (isOperator) {
-      operator = item; // set the last operator to do the calculation in the next loop cycle
+      operator = item;
     } else {
       switch (operator) {
         case "+":
