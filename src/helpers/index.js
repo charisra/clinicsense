@@ -56,12 +56,11 @@ export const addValueToCalculation = (value, currentState) => {
   // Check if current value is an operator
   let currentValIsOperator = operatorVals.includes(value);
 
-  // Check if last val in array is an operator with new operator
+  // Check if both the last and current values are operators, replace with new operator
   if (lastValIsOperator && currentValIsOperator) {
     currentState[currentState.length - 1] = value;
 
     return currentState;
   }
-
   return [...currentState, value];
 };
