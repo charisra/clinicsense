@@ -1,4 +1,4 @@
-# Clincsense React Redux Calculator
+# React Redux Calculator
 
 ## How to Run
 
